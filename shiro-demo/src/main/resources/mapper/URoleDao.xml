@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pcitc.shiro_demo.mapper.URoleDao" >
+    <resultMap id="BaseResultMap" type="com.pcitc.shiro_demo.entity.URole" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="type" property="type" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, name, type
+  </sql>
+
+
+    <select id="findRoleByUid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from u_role
+        where id = (select rid from u_user_role where uid = #{Uid,jdbcType=INTEGER})
+    </select>
+
+
+</mapper>

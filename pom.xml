@@ -9,9 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>cxf-webservice</module>
         <module>springboot-demo</module>
-		<module>cxf-webservice</module>
-		<module>springCloud-demo</module>
+        <module>springCloud-demo</module>
+        <module>shiro-demo</module>
     </modules>
 
 </project>
