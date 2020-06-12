@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/reset.css?v=1.0.0.0" th:attr="href=@{/css/public/reset.css?v=1.0.0.0}">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/common.css?v=1.0.0.0" th:attr="href=@{/css/public/common.css?v=1.0.0.0}">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/element.css?v=1.0.0.1" th:attr="href=@{/css/public/element.css?v=1.0.0.1}" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/swiper-4.2.2.min.css?v=4.2.2.1" th:attr="href=@{/css/public/swiper-4.2.2.min.css?v=4.2.2.1}">
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/animate.min.css?v=1.0.0.1" th:attr="href=@{/css/public/animate.min.css?v=1.0.0.1}" />
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/smcc-styles.css?v=1.0.0.0" th:attr="href=@{/css/public/smcc-styles.css?v=1.0.0.0}" />    
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/smcc-footer.css?v=1.0.1.0" th:attr="href=@{/css/public/smcc-footer.css?v=1.0.1.0}" />
+
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/jc-breadcrumb.css?v=1.0.0.0" th:attr="href=@{/css/public/jc-breadcrumb.css?v=1.0.0.0}" />
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/font-awesome.css?v=1.0.0.1" th:attr="href=@{/css/public/font-awesome.css?v=1.0.0.1}" />
+	<link rel="stylesheet" type="text/css" href="../../static/css/private/safetyBulletin.css" th:attr="href=@{/css/private/safetyBulletin.css}"/>
+    <style></style>
+	</head>
+
+	<body>
+<div id="survey" v-cloak>
+<div class="content">
+
+<div class="navigationTitle">
+	首页 > 信息安全管理 > 通报管理 > 安全公告 > 公告概览<br>
+	<input type="button" class="btnSame btnBig btnBlue" value="管理"
+onclick="javascrtpt:window.location.href='http://localhost:8081/securityBulletin/managementList'">
+</div>
+
+
+<!--filterCont-->
+      <div class="filterCont">
+         <el-form ref="form" :model="formData" label-width="90px">
+             <div class="formObj">
+                <div class="formSame"> 
+                   <el-form-item label="公告名称:">
+                            <el-input v-model="formData.bulletinName" clearable placeholder="请输入公告名称" class="entering">
+                            </el-input>
+                  </el-form-item>
+                </div>
+
+                <div class="formSameDate"> 
+                  <el-form-item label="发布时间:">
+                   <div class="queryDate">
+                       <div class="queryDateSame">
+                      <el-date-picker class="dateIonicVB dateWidth" prefix-icon="dateIonic" type="date" clearable placeholder="选择日期" v-model="formData.timeStart"></el-date-picker>
+                       </div>
+                   <div class="reachLine">到</div>
+                      <div class="queryDateSame">
+                         <el-date-picker class="dateIonicVB dateWidth" prefix-icon="dateIonic" type="date" clearable placeholder="选择日期" v-model="formData.timeEnd"
+                         @change="timeEnd"
+                         :picker-options="pickerOptions0">
+                       </el-date-picker>
+                       </div>
+                    </div>
+                  </el-form-item>
+                </div>
+
+        <div class="formSameButton"> 
+    <p style="float:right; margin-top:3px">
+     <button type="button" class="btnSame btnSmall btnCancel"  @click="query" >查询</button>
+      <button type="button" class="btnSame btnBig btnBlue" @click="advancedQuery">
+      高级查询
+      <i></i>
+    </button> 
+      <button type="button" class="btnSame btnSmall btnCancel" @click="reset">清空</button> 
+      </p> 
+   </div>
+                </div>
+ <div class="formObj">
+  <div class="formSame"> 
+      <el-form-item label="类别:">
+    <el-select class="selectInput removeCalss entering" v-model="formData.category" clearable placeholder="请选择"  @change="findCategoryEvent">
+      <el-option
+      v-for="(item,index) in genreList"
+      :key="index"
+      :label="item.noteCategoryName"
+      :value="item.categoryID">
+    </el-option>
+    </el-select>
+  </el-form-item>
+    </div>
+
+    <div class="formSame"> 
+      <el-form-item label="子类别:">
+    <el-select class="selectInput removeCalss entering" v-model="formData.subcategory" clearable placeholder="请选择" @change="subcategoryEvent" >
+      <el-option
+      v-for="(item,index) in findChildList"
+      :key="index"
+      :label="item.noteCategoryName"
+      :value="item.categoryID">
+    </el-option>
+    </el-select>
+  </el-form-item>
+</div>
+</div>
+    
+    <div  v-show="subcategory" style="background-color:#f8f8f8; width:100%; padding:15px 0">
+            <el-form-item label="关键字:"  >
+                <el-input v-model="formData.keyword"  clearable  placeholder="请输入关键字" class="entering" ></el-input>
+             </el-form-item>
+      </div>
+         </el-form>
+      </div>
+      <!--filterCont-->
+
+<el-row :gutter="20">
+  <el-col :span="8" >
+  	<!--安全公告类别 -->
+  	<div class="categorySame category">
+  		<div class="noticeTitle">
+            <el-row :gutter="10">
+            	<el-col :span="10" >
+            		<div class="noticeTitleLeft">
+            			<p><i></i><span>安全公告类别</span></p>
+            		</div>
+            	</el-col>
+            	<el-col :span="14" >
+            		 <ul class="categoryArray">
+                  <li class="active" @click="getCategoryDetails(null)">全部</li>
+                  <li @click="getCategoryDetails('1')">周</li>
+                  <li @click="getCategoryDetails('2')">月</li>
+                  <li @click="getCategoryDetails('3')">年</li>
+            		 	</li>
+            		 </ul>	
+            	</el-col>
+            </el-row>
+  		</div>
+       <div  class="liebei">
+        <h2>安全公告类别统计情况</h2>
+        <p>点击图表查看各个类别下安全公告详情</p>
+       </div> 
+       <div v-show="nowDate" class="noDate" style="margin-top:30px">
+         <img src="/imgs/safetyBulletin/noDate.png" alt="">
+       </div> 
+       <div id="categoryOne" v-show="!nowDate" ></div>
+
+  	</div>
+  	<!--安全公告类别 -->
+  	<!--安全公告类别浏览次数 -->
+  	<div class="categorySame categoryBrowse">
+  		<div class="noticeTitle">
+            <div class="noticeTitleLeft">
+            	<p><i></i><span>安全公告浏览次数TOP5</span></p>
+            </div>
+  		</div>
+      <div  class="liebei">
+        <h2>安全公告浏览次数TOP5详情</h2>
+        <p>点击图表查看该安全公告详情</p>
+       </div>
+      <div v-if="nowDate2" class="noDate" style="margin-top:80px">
+         <img src="/imgs/safetyBulletin/noDate.png" alt="">
+       </div> 
+  		<div id="categoryTwo"></div>
+  	</div>
+  	<!--安全公告类别浏览次数 -->
+
+  	<!--安全公告类别下载次数 -->
+    <div class="categorySame categoryLoad">
+    	<div class="noticeTitle">
+            <div class="noticeTitleLeft">
+            	<p><i></i><span>安全公告附件下载次数TOP5</span></p>
+            </div>
+  		</div>
+      <div  class="liebei">
+        <h2>安全公告附件下载次数TOP5详情</h2>
+        <p>点击图表查看该安全公告详情</p>
+       </div>
+      <div v-if="nowDate3" class="noDate" style="margin-top:80px">
+         <img src="/imgs/safetyBulletin/noDate.png" alt="">
+       </div> 
+  		<div id="categoryThree" v-if="!nowDate3"></div>
+    </div>
+  	<!--安全公告类别下载次数 -->
+
+  </el-col>
+  <el-col :span="16">
+  	<div class="bulletinList">
+  		<div class="noticeTitle">
+            <div class="noticeTitleLeft">
+            	<p><i></i><span>安全公告</span></p>
+            </div>
+  		</div>
+  		<div class="bulletinCont" >
+  		  <ul class="bulletinContList">
+  		  		<li v-if="!item.overdue" v-for="item in noticeList" :key="item.pkId">
+  		  			<div class="bulletinListLeft">
+  		  		<a  :title="item.noticename" :href="'announcementDetails?pkId='+item.pkId+'&href='+href">
+              <span style="padding-right:5px">{{'【'+item.categoryName+'】'}}</span>
+            {{item.noticename}}</a>
+  		  				<i class="icon_new" v-if="newState(item.publishdate)"></i>
+  		  				<i class="icon_setTop" v-if="item.top==1"></i>
+  		  			</div>
+  		  			<div class="bulletinListRight">
+  		  				<p>发布时间：<span>{{transformDate(item.publishdate).yearText}}</span>
+                          <span  style="padding-left:10px" >{{transformDate(item.publishdate).timeText}}</span>
+  		  				</p>
+  		  			</div>
+  		  		</li>
+  		  	</ul>	
+        <div v-if="nowDate4" class="noDate" style="position:relative; top:292px">
+         <img src="/imgs/safetyBulletin/noDate.png" alt="">
+       </div> 
+        </div>
+         <div class="bulletinContBottom">
+         	<el-row>
+                  <el-col :span="8">
+                  	 <p class="outLine"><!-- 显示{{totalStart}}到{{totalEnd}}行,共{{totalCount}}行 --></p>
+                  </el-col>
+                  <el-col :span="16"> 
+
+                    <el-pagination style="float:right" v-if="nowPage" background layout="prev, pager,next,slot,jumper" :total="totalCount" prev-text="上一页" next-text="下一页" :pager-count="5" @current-change="currentChange" :current-page.sync="currentPage" :page-size="20">
+                      <span class="totalNumber">共{{Math.ceil(totalCount/20)}}页 , </span>
+                    </el-pagination>
+
+                  </el-col>
+             </el-row>
+         </div> 
+  		</div>
+  	</div>
+  </el-col>
+</el-row>
+</div>
+</div>
+
+
+ <script id="src-qianhou" data-src="../../static" th:attr="data-src=@{../}"></script>
+<div>
+	  <script type="text/javascript" src="../../static/js/public/es6-promise.auto.js?v=1.0.0.1" th:attr="src=@{/js/public/es6-promise.auto.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/jquery.min.js?v=1.0.0.1" th:attr="src=@{/js/public/jquery.min.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/jquery.cookie.js?v=1.0.0.1" th:attr="src=@{/js/public/jquery.cookie.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/getdata.js?v=1.0.0.0" th:attr="src=@{/js/public/getdata.js?v=1.0.0.0}"></script>
+    <script type="text/javascript" src="../../static/js/public/vue.js?v=1.0.0.1" th:attr="src=@{/js/public/vue.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/PublicFunction.js?v=1.0.0.0" th:attr="src=@{/js/public/PublicFunction.js?v=1.0.0.0}"></script>
+    <script type="text/javascript" src="../../static/js/public/element.js?v=1.0.0.1" th:attr="src=@{/js/public/element.js?v=1.0.0.1}"></script>
+     	
+    <!-- 组件 pulic（公用）private（私有）-->
+    <script src="../../static/compents/public/smcc-footer/smcc-footer.js" th:attr="src=@{/compents/public/smcc-footer/smcc-footer.js}"></script>
+    <script src="../../static/compents/public/smcc-breadcrumb/smcc-breadcrumb.js?v=1.0.0.0" th:attr="src=@{/compents/public/smcc-breadcrumb/smcc-breadcrumb.js?v=1.0.0.0}"></script>
+    <script type="text/javascript" src="../../static/compents/public/smcc-compents.js" th:attr="src=@{/compents/public/smcc-compents.js}"></script>
+   
+	
+      <script type="text/javascript" src="../../static/js/public/echarts.min.js" th:attr="src=@{/js/public/echarts.min.js}" th:inline="none"></script>
+      <script  type="text/javascript" src="../../static/js/private/safetyBulletin/survey.js" th:attr="src=@{/js/private/safetyBulletin/survey.js}"></script>
+</div>	
+</body>
+</html>

@@ -1,0 +1,627 @@
+@charset "UTF-8";
+.number{
+	background:#fff!important;
+	color:#484848!important;
+	border:1px solid #d3d3d3!important;
+}
+.el-pager li:not(.disabled).active{
+	background:#2f2f2f!important;
+	color:#d8d8d8!important;
+	border:none!important;
+}
+.btn-prev,.btn-next{
+	border:1px solid #d3d3d3!important;
+}
+.btn-prev:before{
+    content: "上一页";
+    padding:0 5px!important;
+}
+.btn-next:before{
+    content: "下一页";
+    padding:0 5px!important;
+}
+.el-icon,.el-icon-arrow-left{
+	display:none!important;
+}
+tbody .el-table_1_column_12{
+	color:#70ace5;
+}
+[v-cloak]{
+	display:none!important;
+}
+.content{
+	width:1345px;
+	margin:0 auto;
+	overflow:hidden;
+}
+.safety{
+	width:100%;
+	height:360px;
+	margin-bottom: 10px;
+}
+.left{
+	width:910px;
+	height: 100%;
+	float:left;
+	background:#fff;
+}
+.left-top,.leftTop,.contentTop,.rightTop{
+	width:100%;
+	height: 35px;
+	line-height:35px;
+	border-bottom:1px solid #ededed;
+}
+#container{
+	width:910px!important;
+	height:315px!important;
+}
+.help{
+	margin-left:10px;
+	padding-left:5px;
+	font-size:14px;
+	border-left:2px solid #3d95df;
+}
+.gao{
+	font-size:14px;
+	padding-left:5px;
+	border-left:2px solid #3d95df;
+}
+.right{
+	float:right;
+	width:427px;
+	height: 100%;
+	overflow:hidden;
+	background:#fff;
+}
+.grid-right{
+	float:right!important;
+}
+.el-button--text{
+	margin-top:5px!important;
+}
+.call{
+	clear:both;
+	width:100%;
+	height:370px;
+	margin-bottom: 10px;
+}
+.callLeft{
+	float:left;
+	width:430px;
+	background:#fff;
+}
+#callconent{
+	width:430px!important;
+}
+#callcircle{
+	width:470px!important;
+	height:220px!important;
+}
+
+#callstrip{
+	width:427px!important;
+}
+#callconent,#callstrip{
+	height:320px!important;
+}
+.leftTop,.contentTop,.rightTop{
+	margin-bottom:15px;
+}
+.callConent{
+	float:left;
+	width:470px;
+	margin-left:10px;
+	background:#fff;
+}
+.contentBottom{
+	height:100px;
+}
+.callRight{
+	float:right;
+	width:427px;
+	background:#fff;
+}
+.el-card__body{
+	height:325px!important;
+	padding:0 10px!important;
+}
+.item{
+	height:25px!important;
+	line-height:25px!important;
+    font-size: 12px!important;
+  	border-bottom:1px solid #ededed!important;
+  }
+.box-card{
+	width:100%!important;
+}
+.el-card__header{
+	height:35px!important;
+	line-height:35px!important;
+	padding:0 10px!important;
+}
+.testing>div.click .el-main h2{
+	color: #0065ba;
+	text-decoration: underline;
+}
+.el-row{
+	width:100%;
+  	overflow: hidden;
+}
+.bg-purple{
+	width:95%;
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    white-space: nowrap;
+	float:left;
+	background:#fff!important;
+}
+.numStatistics{
+	width:100%;
+	padding-left:2%;
+}
+.numStatistics>h2{
+	font-size:14px;
+}
+.numList ul{
+	padding-left: 6.06%;
+}
+.numList li{
+	float: left;
+	text-align: center;
+	width: 29.545%;
+	height: 74px;
+	position: relative;
+}
+.numList li.li1:before,.numList li.li2:before {
+ content: '';
+ background: #cecece;
+ width: 1px;
+ height: 27px;
+ position: absolute;
+ top: 24px;
+ right: 0;
+}
+.numList li span{
+	font-size: 14px;
+	color: #999999;
+	line-height: 26px;
+}
+.numList li h2{
+	font-size: 36px;
+	color: #333;
+	line-height: 48px;
+	font-weight: 600;
+}
+.el-col{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both;
+}
+.box-card {
+    width: 25.40%;
+}
+.tableContent{
+  	clear: both;
+  	width:100%;
+}
+.tabTop{
+	width: 100%;
+	height: 155px;
+	margin-bottom:15px;
+}
+.el-textarea__inner{
+	border-radius:0!important;
+	position:relative!important;
+}
+#numText{
+	position:absolute;
+	left:680px;
+	bottom:0;
+	height:20px!important;
+	line-height:20px!important;
+}
+.lin{
+  	border-bottom:1px solid #ededed;
+}
+.title{
+  	height:35px;
+  	line-height:35px;
+  	background:#fff;
+  	border-bottom:2px solid #ededed;
+}
+.testing{
+  	height:120px;
+  	width: 100%;
+  	background:#fff;
+}
+.testing>div{
+	padding:10px;
+	float:left;
+	box-sizing:border-box;
+	width:25%;
+	border-right:1px solid #ededed;
+	position: relative;
+}
+.testing>div:hover{
+	color:#0065ba;
+}
+.testing>div.click:before{
+	content: '';
+	
+	text-decoration: underline;
+	background: url(../../img/up.png) center no-repeat;
+	width:25px;
+	height: 23px;
+	position: absolute;
+	bottom: -12px;
+	left: 40.9%;
+}
+.el-main{
+	overflow:hidden!important;
+	padding:10px!important;
+}
+.el-main>h2{
+	font-size:22px;
+}
+.open{
+	float:right;
+	color:#61a4e3;
+	font-size:12px;
+}
+.el-header{
+	padding:0!important;
+	height:30px!important;
+}
+.texts{
+	color:#333333;
+	font-size:14px;
+	font-weight:bolder;
+}
+.el-aside{
+	width:72px!important;
+	height:72px!important;
+	overflow:hidden!important;
+}
+.imgPub{
+	width:100%;
+}
+.fsize{
+	font-size:12px;
+	color:#a0a0a0;
+}
+.el-table{
+	width:1325px!important;
+	margin:auto!important;
+}
+.tabInspection,.tabProtection,.tabSecurity,.tabNotice{
+	width:100%;
+	border-top:1px solid #4f93cb;
+	padding:10px 0 15px 0;
+	background:#fff;
+}
+.has-gutter .is-leaf{
+	height:25px!important;
+	padding:5px 0!important;
+}
+.batch{
+	width:1325px;
+	margin:0 auto;
+}
+.batch>.el-button{
+	float:right;
+	margin-bottom:10px;
+}
+.el-table{
+	border:1px solid #d2d2d2!important;
+	margin-bottom:15px;
+}
+.paging{
+	width:1325px;
+	margin:0 auto;
+	height:40px;
+}
+.pageLeft{
+	float:left;
+	padding-top:20px;
+	color:#666666;
+}
+.pageRight{
+	float:right;
+	padding-top:15px;
+}
+.cell{
+	height:25px!important;
+}
+.cell>.el-button{
+	padding:0px!important;
+}
+.el-table td{
+	padding:5px 0!important;
+}
+
+/* 弹窗样式 */
+.el-dialog__header{
+	border-bottom:1px solid #d3d3d3;
+}
+.el-dialog__body{
+	padding:15px 15px!important;
+}
+.el-dialog{
+	width: 530px!important;
+	height: 290px;
+}
+.popupTop{
+    height: 35px;
+    margin-bottom: 15px;
+}
+.el-button .el-button--default{
+	height:25px!important;
+	line-height:25px!important;
+}
+.tabBottom .dialog-footer>button{
+	height:35px!important;
+} 
+.tabBottom .el-dialog__footer{
+	padding: 0px 20px 0px;
+} 
+
+.el-dialog__title{
+	line-height: 29px!important;
+}
+.popupTop>.el-row{
+    height: 35px!important;
+    line-height: 35px!important;
+}
+.adopt{
+	width:100px;
+	height:40px;
+	background:blue;
+}
+
+/* pc 1280px */
+ @media screen and (max-width: 1300px){
+ 	.content{
+	width:1260px;
+	}
+	.safety{
+		width:100%;
+		height:335px;
+		margin-bottom: 15px;
+	}
+	.left{
+		width:850px;
+		height: 100%;
+	}
+	.left-top,.leftTop,.contentTop,.rightTop{
+		width:100%;
+		height: 35px;
+		line-height:35px;
+	}
+	#container{
+		width:100%!important;
+		height:300px!important;
+	}
+	.right{
+		width:400px;
+		height: 100%;
+	}
+	.call{
+		width:100%;
+		height:350px;
+		margin-bottom: 10px;
+	}
+	.callLeft{
+		width:400px;
+	}
+	#callconent{
+		width:400px!important;
+	}
+	#callcircle{
+		width:440px!important;
+		height:215px!important;
+	}
+	#callstrip{
+		width:400px!important;
+	}
+	#callconent,#callstrip{
+		height:315px!important;
+	}
+	.callConent{
+		width:440px;
+		margin-left:10px;
+	}
+	.contentBottom{
+		height:100px;
+	}
+	.callRight{
+		width:400px;
+	}
+	.el-card__body{
+		height:300px!important;
+		padding:0 10px!important;
+	}
+	.item{
+		height:23px!important;
+		line-height:23px!important;
+	    font-size: 12px!important;
+	}
+	.box-card{
+		width:100%!important;
+	}
+	.el-card__header{
+		height:35px!important;
+		line-height:35px!important;
+		padding:0 10px!important;
+	}
+	.tabTop{
+		width: 100%;
+		height: 165px;
+		margin-bottom:15px;
+	}
+	.title{
+	  	height:35px;
+	  	line-height:35px;
+	}
+	.testing{
+	  	height:120px;
+	  	width: 100%;
+	}
+	.testing>div{
+		padding:10px;
+		width:25%;
+	}
+	.testing>div.click:before{
+		width:25px;
+		height: 23px;
+		bottom: -26px;
+		left: 40.9%;
+	}
+	.el-aside{
+		width:68px!important;
+		height:68px!important;
+	}
+	.el-table{
+		width:1240px!important;
+	}
+	.paging{
+		width:1240px;
+		height:40px;
+	}
+	.el-table tr{
+	height:23px!important;
+	}
+}
+
+
+/* pc 1920px */
+@media screen and (min-width: 1900px){
+	.content{
+	width:1890px;
+	}
+	.safety{
+		width:100%;
+		height:510px;
+		margin-bottom: 15px;
+	}
+	.left{
+		width:1275px;
+		height: 100%;
+	}
+	.left-top,.leftTop,.contentTop,.rightTop{
+		width:100%;
+		height: 50px;
+		line-height:50px;
+	}
+	#container{
+		width:100%!important;
+		height:460px!important;
+	}
+	.right{
+		width:600px;
+		height: 100%;
+	}
+	.el-card__body{
+		height:460px!important;
+		padding:0 15px!important;
+	}
+	.box-card{
+		width:100%!important;
+	}
+	.el-card__header{
+		height:50px!important;
+		line-height:50px!important;
+		padding:0 15px!important;
+	}
+	.item{
+		height:35px!important;
+		line-height:35px!important;
+	    font-size: 14px!important;
+	}
+	.call{
+		width:100%;
+		height:525px;
+		margin-bottom: 15px;
+	}
+	.callLeft{
+		float:left;
+		width:600px;
+	}
+	#callconent{
+		width:600px!important;
+	}
+	#callcircle{
+		width:660px!important;
+		height:350px!important;
+	}
+	#callstrip{
+		width:600px!important;
+	}
+	#callconent,#callstrip{
+		height:475px!important;
+	}
+	.callConent{
+		width:660px;
+		margin-left:15px;
+	}
+	.contentBottom{
+		height:125px;
+	}
+	.callRight{
+		width:600px;
+	}
+	.tabTop{
+		width: 100%;
+		height: 230px;
+		margin-bottom:15px;
+	}
+	.title{
+	  	height:50px;
+	  	line-height:50px;
+	}
+	.testing{
+	  	height:180px;
+	  	width: 100%;
+	}
+	.testing>div{
+		padding:20px;
+		width:25%;
+	}
+	.testing>div.click:before{
+		width:25px;
+		height: 23px;
+		bottom: -24px;
+		left: 40.9%;
+	}
+	.el-aside{
+		width:100px!important;
+		height:100px!important;
+	}
+	.el-table{
+		width:1860px!important;
+	}
+	.paging{
+		width:1860px;
+		height:60px;
+	}
+	.el-table tr{
+		height:35px!important;
+	}
+}
+
+
+
+
+
+
+
+
+

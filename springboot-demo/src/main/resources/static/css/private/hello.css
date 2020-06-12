@@ -1,0 +1,10 @@
+html, body {
+    margin: 5px;
+    padding: 0;
+}
+
+#app{
+	width: 100px;
+	hight: 100px;
+	background:red;
+}

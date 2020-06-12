@@ -1,0 +1,369 @@
+@charset "UTF-8";
+[v-cloak]{
+	display:none!important;
+}
+#approval{
+	width:100%;
+}
+#home{
+	width:1345px;
+	background:#ededed;
+	padding-bottom:15px;
+	margin:auto;
+	position: relative;
+}
+.approvalTop{
+	width:100%;
+	height:193px;
+	background:#fff;
+	padding-bottom:20px;
+	margin-bottom:15px;
+	font-size: 14px;
+}
+.topFrom{
+	margin-left:15px;
+}
+.el-form-item{
+	margin:0px;
+}
+.el-input__inner{
+	height: 34px;
+	line-height:34px;
+	border-radius:2px;
+}
+.el-form-item__label{
+	width:85px !important;
+	line-height:34px;
+}
+.el-form-item__content{
+	margin-left:85px !important;
+	line-height:34px;
+}
+.el-textarea__inner{
+	position:relative!important;
+	font-family: '微软雅黑';
+	border-radius:2px;
+}
+#numText{
+	position:absolute;
+	left:676px;
+	bottom:0;
+	width:60px;
+	text-align:right;
+	color:#999999;
+}
+.el-select{
+	width: 230px!important;
+}
+.el-textarea{
+	width:750px!important;
+}
+
+.information{
+	padding-top:15px;
+	padding-left:15px;
+}
+.apply,.agent{
+	margin-bottom:10px;
+	font-weight: 700;
+}
+.applyInformation .grid-content,.agentInformation .grid-content{
+	text-align:right;
+	color:#333333;
+}
+.applyInformation .bg-purple-light,.agentInformation .bg-purple-light{
+	text-indent:5px;
+	color:#8a8a8a;
+}
+.applyInformation .el-row,.agentInformation .el-row{
+	margin-bottom:17px;
+}
+
+.operationTop{
+	position:relative;
+	padding-bottom:1px;
+}
+.authorization{
+	position:absolute;
+	right:0;
+	top:0;
+	margin-top:0 !important;
+}
+.operationBottom{
+	position:relative;
+	height:176px;
+}
+.approval{
+	position:absolute;
+	left:543px;
+	top:0;
+}
+.publicLine{
+	font-size:14px;
+	border-bottom:1px solid #f2f2f2;
+}
+.text{
+	padding:15px 0 15px 15px;
+}
+.line{
+	padding-left:10px;
+	border-left:2px solid #3d95df;
+}
+.operation{
+	margin:0 40px;
+	padding-bottom:20px;
+}
+.el-step__icon{
+	padding:0 4px;
+	width: 41px;
+	height: 33px;
+	background:#fff url(../../imgs/step_icon.gif) no-repeat center 0;
+	border:none;
+}
+.el-step__icon.is-text{ 
+	border:none;
+} 
+.stepover .el-step__icon{
+	background:#fff url(../../imgs/step_cur_icon.gif) no-repeat center 0;
+}
+.el-step__icon-inner{
+	text-indent: -9999px;
+	overflow: hidden;
+}
+.el-step.is-horizontal .el-step__line{
+	top:14px;
+	height:1px;
+}
+.el-step__head.is-success{
+	color: #cecece;
+    border:none;
+}
+.el-step__line{
+	color:#cecece;
+}
+.el-step__line-inner{
+	border:none !important;
+}
+.operationTop,.operationBottom{
+	width:100%;
+}
+.operationCentent{
+	height:38px;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.operationCentent_con{
+	width:88%;
+}
+.last_line{
+	width: calc(100% - 88%);
+	background:#cecece;
+	height:1px;
+}
+.operationApply,.approval,.authorization{
+	width:210px;
+	margin:15px 0  5px;
+}
+.applyTable{
+	width:100%;
+	border:1px solid #dbdbdb;
+	margin-bottom:10px;
+	padding:5px 0;
+}
+.applyTable>.el-row>.el-col>.grid-content{
+	text-align:right;
+}
+.applyTable>.el-row{
+	height:30px;
+	line-height:30px;
+}
+.completeTime{
+	color:#3d95df;
+	font-size:14px;
+	margin-bottom: 10px;
+}
+.form{
+	position: absolute;
+    right: 0;
+    top: 7px;
+    width: 200px;
+	height: 44px;
+	text-align: right;
+}
+
+.must:first-child{
+	margin-bottom: 15px !important;
+}
+.must::before{
+	content: "*";
+	color:#ff0000;
+	font-size:14px;
+	position: relative;
+	top:29px;
+	left:0;
+}
+.must:nth-child(2){
+	position: relative;
+    top: -19px;
+}
+.el-input__suffix-inner{
+	border-left: 1px solid #cecece;
+}
+
+.el-dialog__body{
+	color:#333;
+}
+.approvalContent{
+	width:100%;
+	background:#fff;
+	margin-bottom:15px;
+	font-size: 14px;
+}
+.approvalBottom{
+	width:100%;
+	background:#fff;
+	font-size: 14px;
+}
+.el-input__icon{
+	line-height:34px;
+}
+.con_ft{
+	color:#666;
+}
+/* 后台基本布局 */
+.breadcrumb{
+	-webkit-box-sizing:border-box;
+	        box-sizing:border-box;
+	height:46px;
+	padding:13px 0;
+}
+/* 按钮 */
+.el-button {
+    line-height: 34px;
+    height: 34px;
+    border-radius: 2px;
+	border: none;
+	padding:0 21px;
+}
+.fsnum2{
+	width: 70px;
+	padding: 0;
+}
+.btn_default{
+	background:#3d95df !important;
+}
+.btn_default:hover{
+	background: #0065ba !important;
+}
+.btn_back{
+	color: #333333;
+    background: #ffffff;
+    border: solid 1px #cecece;
+}
+.btn_back:hover{
+	color: #333333;
+	background: #ededed;
+	text-decoration: none;
+	border: solid 1px #cecece;
+}
+/* 按钮 disabled */
+.is-disabled .el-input__inner {
+	background: #ededed !important;
+	border: solid 1px #cecece !important;
+	padding: 0 20px !important;
+}
+
+.btn_operation {
+	color: #3d95df;
+}
+
+.btn_operation:hover {
+	color: #0065ba;
+	text-decoration: underline;
+}
+/* 弹出框 */
+.el-dialog{
+	-webkit-box-shadow:4px 10px 20px #454545;
+			box-shadow:4px 10px 20px #454545;
+	border: solid 1px #cecece;
+}
+.warn_con{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.warn_com{
+	text-align: left;
+	line-height: 1;
+	padding-left: 10px;
+}
+.warn_ft{
+	margin-bottom: 5px;
+}
+.warn_bd{
+	font-size:12px;
+	color:#666666;
+}
+.el-icon-close:before{
+	content: ""
+}
+.el-dialog__footer{
+	text-align: center;
+}
+
+/* 报错 */
+.red{border-color: #f56c6c !important;}
+
+/* 保存弹出块 */
+.show{
+	display: block !important;
+}
+.submit_w{
+	display:none;
+	position: absolute;
+	left:50%;
+	top:120px;
+	margin-left:-75px;
+}
+.submit_box{
+	-webkit-box-shadow: 0 0px 18px 0px #bbb;
+			box-shadow: 0 0px 18px 0px #bbb;
+	width:150px;
+	height:80px;
+	background:#fff;
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+			flex-direction: row;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.submit_box p{
+	font-size:14px;
+	color:#333;
+	margin-left:8px;
+}
+
+

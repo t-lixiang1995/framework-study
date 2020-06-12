@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="com.pcitc.sebl.helloSpringBoot.mapper.FileOperationMapper">
+
+	<resultMap id="SeblFileRM" type="com.pcitc.sebl.helloSpringBoot.entity.SeblTaskFile">
+        <result property="id" column="id"/>        
+        
+        <result property="contactId" column="contact_id"/>
+        
+        <result property="fileName" column="file_name"/>        
+        
+        <result property="fileAddress" column="file_address"/>        
+        
+        <result property="creationTime" column="creation_time"/>             
+	</resultMap>
+	
+	<sql id="SeblFileGetColumns">
+			 id
+			,contact_id
+			,file_name
+			,file_address
+			,creation_time
+	</sql>
+	
+		<insert id="uploadFileInsert" useGeneratedKeys="true" keyProperty="id">
+		<selectKey keyProperty="id" resultType="java.lang.String" order="BEFORE">
+            SELECT REPLACE(UUID(),'-','') FROM DUAL
+        </selectKey>
+        INSERT INTO T_SEBL_TASK_FILE (
+	        	id
+	        	<if test="contactId != null and contactId != ''">
+		        	,contact_id
+		      	</if>
+		     	<if test="fileName != null and fileName != ''">
+		        	,file_name
+		      	</if>
+		     	<if test="fileAddress != null and fileAddress != ''">
+		        	,file_address
+		      	</if>
+		     	<if test="creationTime != null">
+		        	,creation_time
+		      	</if>
+        ) VALUES (
+	        	#{id}
+	        	<if test="contactId != null and contactId != ''">
+		        	,#{contactId}
+		      	</if>
+	        	<if test="fileName != null and fileName != ''">
+		        	,#{fileName}
+		      	</if>
+		     	<if test="fileAddress != null and fileAddress != ''">
+		        	,#{fileAddress}
+		      	</if>
+		     	<if test="creationTime != null">
+		        	,#{creationTime}
+		      	</if>
+        )
+	</insert>
+     	
+     	<select id="seblFileGetById" parameterType="java.lang.String" resultMap="SeblFileRM">
+		SELECT 
+		 	id
+			,contact_id
+			,file_name
+			,file_address
+			,creation_time
+		FROM T_SEBL_TASK_FILE
+	        WHERE 
+		        id = #{fileId} 
+		</select>
+		
+		<delete id="deleteTaskFile">
+        	DELETE FROM T_SEBL_TASK_FILE 
+       		 WHERE
+        	id = #{fileId} 
+    	</delete>
+
+	<select id ="queryTaskFileByContactId" resultMap="SeblFileRM">
+	    SELECT 
+			ID,
+			CONTACT_ID,
+			FILE_NAME,
+			FILE_ADDRESS,
+			CREATION_TIME
+		FROM T_SEBL_TASK_FILE WHERE CONTACT_ID = #{contactId}
+	</select>
+</mapper>
+

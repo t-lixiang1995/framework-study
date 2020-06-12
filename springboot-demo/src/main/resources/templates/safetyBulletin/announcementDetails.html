@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/reset.css?v=1.0.0.0" th:attr="href=@{/css/public/reset.css?v=1.0.0.0}">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/common.css?v=1.0.0.0" th:attr="href=@{/css/public/common.css?v=1.0.0.0}">
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/element.css?v=1.0.0.1" th:attr="href=@{/css/public/element.css?v=1.0.0.1}" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/swiper-4.2.2.min.css?v=4.2.2.1" th:attr="href=@{/css/public/swiper-4.2.2.min.css?v=4.2.2.1}">
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/animate.min.css?v=1.0.0.1" th:attr="href=@{/css/public/animate.min.css?v=1.0.0.1}" />
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/smcc-styles.css?v=1.0.0.0" th:attr="href=@{/css/public/smcc-styles.css?v=1.0.0.0}" />    
+    <link rel="stylesheet" type="text/css" href="../../static/css/public/smcc-footer.css?v=1.0.1.0" th:attr="href=@{/css/public/smcc-footer.css?v=1.0.1.0}" />
+
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/jc-breadcrumb.css?v=1.0.0.0" th:attr="href=@{/css/public/jc-breadcrumb.css?v=1.0.0.0}" />
+	<link rel="stylesheet" type="text/css" href="../../static/css/public/font-awesome.css?v=1.0.0.1" th:attr="href=@{/css/public/font-awesome.css?v=1.0.0.1}" />
+<link rel="stylesheet" type="text/css" href="../../static/css/private/safetyBulletin.css" th:attr="href=@{/css/private/safetyBulletin.css}"/>
+    <style></style>
+  </head>
+
+	<body>
+<div id="announcementDetails" v-cloak>
+<div class="content">
+
+<div class="navigationTitle">
+  <div class="sameNavigationLeft">
+	<span>首页 > 信息安全管理 > 通报管理 > 安全公告 > {{contObj.noticename}}</span>
+  </div>
+	<div class="callUrl">
+		<button class="btnSame btnSmall btnCancel" type="button" @click="callBackHref">返回</button>
+	</div> 
+</div>
+
+
+<div class="announcementCont">
+	<div class="noticeTitle">
+            <div class="noticeTitleLeft">
+              <p><i></i><span>公告详情</span></p>
+            </div>
+      </div>
+  
+  <div class="announcementBady">
+
+   <div class="detailsHeadr">
+   	   <h1>{{contObj.noticename}}</h1>
+
+        <div class="release">
+              <div class="releaseCont">
+                <span>
+                  <b>发布人</b>：{{contObj.publisher}}
+                </span>
+                <span>
+                  <b>发布单位：</b>{{contObj.publishingUnit}}
+                </span>
+                <span>
+                  <b>发布时间：</b>{{transformDate(contObj.publishdate).yearText}}
+                    {{transformDate(contObj.publishdate).timeText}}
+                </span>
+              </div>
+         </div>
+
+   	  <!--  <div class="release"> 
+             <el-row>
+        <el-col :span="8">
+          <div style="text-align: center">
+            发布人：{{contObj.publisher}}
+          </div>
+        </el-col>
+       <el-col :span="8">
+         <div style="text-align: center">
+           发布单位：{{contObj.publishingUnit}}
+         </div>
+       </el-col>
+        <el-col :span="8">
+          <div style="text-align: center">
+            发布时间：{{transformDate(contObj.publishdate).yearText}}
+                    {{transformDate(contObj.publishdate).timeText}}
+          </div>
+        </el-col>
+      </el-row>
+      </div> -->
+   	
+   </div>
+
+
+   <div class="detailsCont">
+     <div class="setWoll">
+      <div class="setWollCont">
+   	 <p><b style="font-size:14px">正文</b></p>
+     <div class="detailsContTop" v-html="contObj.encoder">
+     </div>
+     </div>
+     </div>
+
+     <div class="detailsContBtm">
+      <div class="setWollCont">
+        <p><b style="font-size:14px">附件：</b>
+        <a @click="downloadUpdate" :href="'/sebl/seblfile/downMongoFile?id='+contObj.fileid1">
+          <img v-if="contObj.attach1filename" src="/imgs/safetyBulletin/fileLoad.png" alt="">
+          <span>{{contObj.attach1filename}}</span>
+          </a>
+
+        <a @click="downloadUpdate" :href="'/sebl/seblfile/downMongoFile?id='+contObj.fileid2">
+           <img  v-if="contObj.attach2filename" src="/imgs/safetyBulletin/fileLoad.png" alt="">
+           <span>{{contObj.attach2filename}}</span>
+         </a>
+         
+        <a @click="downloadUpdate" :href="'/sebl/seblfile/downMongoFile?id='+contObj.fileid3">
+          <img v-if="contObj.attach3filename" src="/imgs/safetyBulletin/fileLoad.png" alt="">
+        <span>{{contObj.attach3filename}}</span>
+       </a>
+        </p>
+      </div>
+     </div>
+
+   </div>
+
+   </div>
+
+</div>
+</div>
+</div>
+ <script id="src-qianhou" data-src="../../static" th:attr="data-src=@{../}"></script>
+<div>
+	<script type="text/javascript" src="../../static/js/public/es6-promise.auto.js?v=1.0.0.1" th:attr="src=@{/js/public/es6-promise.auto.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/jquery.min.js?v=1.0.0.1" th:attr="src=@{/js/public/jquery.min.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/jquery.cookie.js?v=1.0.0.1" th:attr="src=@{/js/public/jquery.cookie.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/getdata.js?v=1.0.0.0" th:attr="src=@{/js/public/getdata.js?v=1.0.0.0}"></script>
+    <script type="text/javascript" src="../../static/js/public/vue.js?v=1.0.0.1" th:attr="src=@{/js/public/vue.js?v=1.0.0.1}"></script>
+    <script type="text/javascript" src="../../static/js/public/PublicFunction.js?v=1.0.0.0" th:attr="src=@{/js/public/PublicFunction.js?v=1.0.0.0}"></script>
+    <script type="text/javascript" src="../../static/js/public/element.js?v=1.0.0.1" th:attr="src=@{/js/public/element.js?v=1.0.0.1}"></script>
+     	
+    <!-- 组件 pulic（公用）private（私有）-->
+    <script src="../../static/compents/public/smcc-footer/smcc-footer.js" th:attr="src=@{/compents/public/smcc-footer/smcc-footer.js}"></script>
+    <script src="../../static/compents/public/smcc-breadcrumb/smcc-breadcrumb.js?v=1.0.0.0" th:attr="src=@{/compents/public/smcc-breadcrumb/smcc-breadcrumb.js?v=1.0.0.0}"></script>
+    <script type="text/javascript" src="../../static/compents/public/smcc-compents.js" th:attr="src=@{/compents/public/smcc-compents.js}"></script>
+      <script  type="text/javascript" src="../../static/js/private/safetyBulletin/announcementDetails.js" th:attr="src=@{/js/private/safetyBulletin/announcementDetails.js}"></script>
+</div>
+	</body>
+</html>

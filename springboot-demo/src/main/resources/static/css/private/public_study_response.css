@@ -1,0 +1,132 @@
+.operation_content{
+	width: 100%;
+	height: auto;
+}
+.operation_server{
+	width: 100%;
+	height: auto;
+	padding-top: 40px;
+	background: #ffffff;
+}
+.safety_study{
+	width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 80px;
+}
+.safety_study>h3{
+	text-align: center;
+	padding: 58px 0 40px 0;
+	font-size: 24px;
+	color: #333333;
+}
+
+.safety_study_details{
+	width: 1164px;
+	height: 318px;
+	border: 1px solid #cecece;
+	padding: 0 18px;
+	display: flex;
+}
+.safety_study_details>img{
+	display: block;
+	padding: 15px 0;
+	padding-right: 17px;
+	border-right: 1px solid #cecece;
+}
+.safety_study_text{
+	padding-top: 24px;
+	margin-left: 14px;
+	display: flex;
+	flex-direction: column;
+}
+.safety_study_text p{
+	font-size: 14px;
+	color: #7a7a7a;
+	line-height: 16px;
+}
+.safety_study_text h4{
+	padding: 40px 0 10px 5px;
+	font-size: 16px;
+	color: #d81e06;
+}
+.safety_study_text ul{
+	padding-left: 5px;
+}
+.safety_study_text ul li{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #7a7a7a;
+}
+.operation_price{
+	width: 100%;
+	height: auto;
+	padding-top: 61px;
+	background: #f3f3f3;
+}
+.operation_price_main{
+	width: 1200px;
+	margin: 0 auto;
+	padding-bottom: 80px;
+}
+.operation_price_main h3{
+	width: 100%;
+	font-size: 24px;
+	padding-bottom: 40px;
+	color: #333333;
+	text-align: center;
+}
+.operation_price_details{
+	width: 100%;
+	height: 190px;
+	background: #ffffff;
+	display: flex;
+}
+.price_details_l{
+	width: 925px;
+	padding: 40px 45px 0 30px;
+}
+.price_details_l h4{
+	font-size: 20px;
+	color: #3da3df;
+	margin-bottom: 12px;
+}
+.price_details_l p{
+	font-size: 12px;
+	line-height: 25px;
+	color: #7a7a7a;
+}
+.price_size{
+	width: 200px;
+	height: 190px;
+	background: #242526;
+}
+.price_size h5{
+	width: 100%;
+	padding-top: 42px;
+	padding-bottom: 12px;
+	text-align: center;
+	font-size: 12px;
+	color: #ffffff;
+}
+.price_size>span{
+	display: block;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+.list_two{
+	display: none;
+}
+.el-input__inner{
+	color: #ffffff !important;
+}
+.price_size>span b{
+	margin-bottom: 8px;
+	font-size: 12px;
+	color: #ffffff;
+}
+.price_size>span span{
+	font-size: 14px;
+	color: #d81e06;
+	font-weight: bold;
+}

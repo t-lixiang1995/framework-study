@@ -1,0 +1,675 @@
+body {
+	min-width: 1280px;
+	padding-bottom: 20px;
+}
+
+.el-input--34{
+	height: 34px;
+	line-height: 34px;
+}
+
+.el-input--34 input{
+	border-radius: 2px;
+}
+
+.el-input--34 *{
+	height: 34px;
+	line-height: 34px;
+}
+
+.el-select-dropdown {
+	z-index: 12000!important;
+}
+
+[v-cloak] {
+	display: none!important;
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #666;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #666;
+	opacity: 1;
+}
+
+input:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+input::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+
+/*树形结构*/
+
+.smcc-tree-ul {
+	margin-left: 20px;
+}
+
+.smcc-tree-li {
+	cursor: pointer;
+}
+
+.smcc-tree-open,
+.smcc-tree-close,
+.smcc-tree-file {
+	display: inline-block;
+	width: 20px;
+	height: 16px;
+	margin-right: 5px;
+	background-repeat: no-repeat;
+	position: relative;
+	top: 4px;
+}
+
+.smcc-tree-open {
+	background-image: url(../../imgs/smcc-tree-open.png);
+}
+
+.smcc-tree-close {
+	background-image: url(../../imgs/smcc-tree-close.png);
+}
+
+.smcc-tree-file {
+	background-image: url(../../imgs/smcc-tree-file.png);
+}
+
+
+/*单项选择框（带删除的）*/
+
+.smcc-slide-box {
+	height: 18px;
+	line-height: 18px;
+	background: #f5fafd;
+	border: 1px solid #3d95df;
+	margin: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.smcc-slide-box span {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	top: -2px;
+}
+
+.smcc-slide-box a {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	border-left: 1px solid #3d95df;
+	background: url(../../imgs/delete.png) no-repeat;
+}
+
+
+/*页面标题*/
+
+
+/*h2 {
+	height: 30px;
+}*/
+
+.smcc-header-title {
+	height: 34px;
+	line-height: 34px;
+}
+
+
+/*单行输入框*/
+
+.smcc-inp-text {
+	width: 95%;
+	text-indent: 32px!important;
+	background: none;
+	border: none!important;
+	border-bottom: 1px solid #CECECE!important;
+}
+
+
+/*多标签 input 输入框*/
+
+.smcc-tags-filter {
+	border: none!important;
+	border-bottom: 1px solid #dcdfe6!important;
+}
+
+.smcc-tags-input {
+	-webkit-appearance: none;
+	display: -webkit-inline-box;
+	display: inline-flex;
+	display: -ms-inline-flexbox;
+	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-align-items: center;
+	background-color: #fff;
+	background-image: none;
+	border-radius: 4px;
+	border: 1px solid #dcdfe6;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #606266;
+	font-size: inherit;
+	min-height: 40px;
+	line-height: 40px;
+	outline: 0;
+	padding: 0 5px;
+	width: 100%;
+}
+
+.smcc-tags-input>input {
+	border: 0;
+	padding-left: 10px;
+	height: 40px;
+}
+
+.smcc-tags {
+	background-color: rgba(235, 244, 251);
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    height: 25px;
+    border: 1px solid #3d95ef;
+    margin: 2px;
+}
+
+.smcc-tags>.text {
+	color: #409EFF;
+	font-size: 12px;
+	padding: 0 10px;
+	height: 25px;
+	border-right: 1px solid #3d95ef;
+	text-align: center;
+	line-height: 25px;
+}
+
+.smcc-tags>.smcc-close-icon {
+	width: 25px;
+	height: 25px;
+	background-position: center;
+}
+
+
+/*按钮样式*/
+
+.smcc-min-btn,
+.smcc-btn {
+	height: 34px;
+	min-width: 70px;
+	font-size:14px ;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: none;
+	background: none;
+	border: 1px solid #cecece;
+	border-radius: 2px;
+}
+
+.smcc-min-btn {
+	height: 22px!important;
+}
+
+
+/*icon按钮*/
+
+/*失败icon*/
+
+.smcc-warning{
+	display: inline-block;
+	border: none;
+	background: url(../../imgs/warning.png) no-repeat;
+}
+
+/*成功icon*/
+
+.smcc-success{
+	display: inline-block;
+	border: none;
+	background: url(../../imgs/success.png ) no-repeat;
+}
+
+/*输入*/
+
+.smcc-text-icon {
+	display: inline-block;
+	border: none;
+	background: url(../../imgs/icon_test_inp_01.png) no-repeat;
+}
+
+
+/*放大*/
+
+.smcc-enlarge-icon {
+	display: inline-block;
+	border: none;
+	background: url(../../imgs/enlarge.png) no-repeat;
+}
+
+
+/*删除icon*/
+
+.smcc-close-icon {
+	display: inline-block;
+	border: none;
+	background: url(../../imgs/delete.png) no-repeat;
+}
+
+
+/*添加按钮*/
+
+.jc-con-add {
+	display: block;
+	width: 34px;
+	height: 34px;
+	border: none;
+	background: url(../../imgs/add.png) no-repeat;
+}
+
+.jc-con-add:hover{
+	background: url(../../imgs/addHover.png) no-repeat;
+}
+
+.smcc-icon-circle {
+	display: block;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 50%;
+}
+
+
+/*列表按钮*/
+
+.smcc-list-con {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: none;
+	background: url(../../imgs/icon-list-close.png) no-repeat 50%;
+}
+
+.smcc-list-con.active {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: none;
+	background: url(../../imgs/icon-list-active.png) no-repeat 50%;
+}
+
+
+/*锚点样式*/
+
+.smcc-anchor {
+	border: none;
+	background: none;
+	color: #3d95df;
+	cursor: pointer;
+}
+
+.smcc-anchor:hover {
+	color: #2969b9!important;
+	text-decoration: underline!important;
+}
+
+
+/* 单元标题*/
+
+.jc-element-header {
+	height: 52px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom: 1px solid #ededed;
+	overflow: hidden;
+	font-family: "微软雅黑";
+}
+
+.jc-element-header h4,
+.jc-system h4 {
+	position: relative;
+	height: 52px;
+	line-height: 52px;
+	margin: 0;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.jc-element-header h4:before,
+.jc-system h4:before {
+	content: '|';
+	font-size: 18px;
+	font-weight: 500;
+	position: absolute;
+	color: #3d95df;
+	left: -10px;
+	top: -1px;
+}
+
+.el-table--border {
+	border-color: #cecece!important;
+	border-bottom: 1px solid #cecece!important;
+}
+
+.smcc-ele-td,
+.smcc-ele-theader {
+	height: 36px!important;
+	padding: 0!important;
+	border-color: #cecece!important;
+}
+
+.smcc-ele-theader {
+	border-bottom-width: 2px!important;
+}
+
+.el-table__row--striped .smcc-ele-td{
+	background: #f9f9f9!important;
+}
+
+
+/*通用表格*/
+
+.smcc-table {
+	width: 100%;
+	border-top: 1px solid #cecece;
+}
+
+.smcc-tr,
+.smcc-theader {
+	border-left: 1px solid #cecece;
+	margin: 0;
+	border-bottom: 1px solid #cecece;
+	min-height: 30px;
+	display: -ms-flexbox;
+}
+
+.smcc-theader {
+	border-bottom: 2px solid #cecece;
+}
+
+.smcc-theader.bdr1 {
+	border-left: 1px solid #cecece;
+}
+
+.smcc-td:first-child {
+	padding-right: 0px;
+}
+
+.smcc-td {
+	border-right: 1px solid #cecece;
+	padding-right: 10px;
+	padding-left: 5px;
+	min-height: 34px;
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	overflow: hidden;
+	-webkit-box-align: center;
+	        align-items: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+}
+
+textarea {
+	resize: none;
+}
+
+.smcc-text-num {
+	color: #999;
+	position: absolute;
+	right: 20px;
+	bottom: -14px;
+	z-index: 200;
+}
+
+@media (max-width:1529px) {
+	.smcc-td {
+		padding-left: 4px!important;
+	}
+}
+
+
+/*上下三角排序按钮*/
+
+.smcc-sort-btn {
+	color: #999;
+}
+
+.smcc-sort-btn dt,
+.smcc-sort-btn dd {
+	height: 8px;
+}
+
+.smcc-sort-btn dt i,
+.smcc-sort-btn dd i {
+	height: 8px;
+	line-height: 8px;
+	cursor: pointer;
+	color: #d9d9d9;
+}
+
+
+/*翻页样式*/
+
+.smcc-page-box {
+	height: 50px;
+	display: -webkit-box;
+	display: flex;
+	display: -ms-flexbox;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.smcc-page-slide {
+	margin-left: 5px;
+	line-height: 30px;
+	height: 30px;
+	color: #333;
+}
+
+.smcc-page-btn {
+	padding-left: 12px;
+	padding-right: 12px;
+	border: 1px solid #cecece;
+	cursor: pointer;
+}
+
+.smcc-page-btn:hover {
+	background-color: #f0f0f0;
+}
+
+.ban-active {
+	background-color: #2f2f2f;
+	color: #d8d8d8;
+}
+
+.smcc-page-slide input {
+	width: 48px;
+	height: 26px!important;
+	line-height: 26px!important;
+	text-align: center;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.ban-click {
+	background-color: #f7f7f7;
+	color: #999;
+}
+
+
+
+/*下拉菜单样式*/
+
+.smcc-select {
+	/* position: relative; */
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.smcc-select-down:before {
+	position: relative;
+	top: -3px;
+	left: 0;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-style: solid;
+	border-color: #666;
+	border-width: 1px 1px 0 0;
+	content: '';
+	-webkit-transform: rotate(135deg);
+	transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+}
+
+.smcc-select-up:before {
+	position: relative;
+	top: 3px;
+	left: 0;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-style: solid;
+	border-color: #666;
+	border-width: 1px 1px 0 0;
+	content: '';
+	-webkit-transform: rotate(313deg);
+	transform: rotate(313deg);
+	-ms-transform: rotate(313deg);
+}
+
+/* element 下拉 */
+.el-select .el-input__suffix-inner{
+    border-left:solid 1px #cecece;
+}
+.el-input__icon{
+    line-height: 34px;
+}
+
+
+/*上传状态token*/
+
+.smcc-updataed {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	background-color: #999999;
+	border-radius: 50%;
+}
+
+.smcc-updataed.active {
+	background-color: #5dae51;
+}
+
+.smcc-updataed:after {
+	content: '✓';
+	color: #ffffff;
+}
+
+
+/*上传重置样式*/
+
+.smcc-file {
+	position: absolute;
+	top: 50%;
+	left: 2px;
+	margin-top: -12px;
+	opacity: 0;
+	cursor: pointer;
+	width: 100%;
+}
+
+
+/*面包屑*/
+
+.mlr {
+	margin: 0 15px;
+}
+
+.breadcrumbOuter {
+	height: 30px;
+}
+
+.breadcrumbOuter .breadcrumb {
+	height: 30px;
+}
+
+.breadcrumbOuter .breadcrumb li {
+	height: 30px;
+	float: left;
+	line-height: 30px;
+}
+
+
+/*Tab切换框 选中 与 划过*/
+
+
+/*背景色切换*/
+
+.smcc-Tab:hover {
+	background-color: #ecf4fc;
+	border: 1px solid #5b96e1;
+}
+
+.smcc-Tab.active {
+	background-color: #d9e9fa;
+}
+
+
+/*下滑线切换*/
+
+.smcc-tab-line-group {
+	height: 100%;
+	padding: 0;
+	margin-top: -4px;
+	line-height: 60px;
+}
+
+.smcc-tab-line-slide {
+	text-align: center;
+	height: 100%;
+	cursor: pointer;
+	padding: 0 10px;
+}
+
+.smcc-tab-line-slide:hover {
+	color: #3d95df;
+}
+
+.smcc-tab-line-slide.active {
+	border-bottom: 4px solid #348fe2;
+	color: #3d95df;
+	height: 100%;
+}
+/*状态框*/
+.syta-state {
+	width: 100%;
+	height: 30px;
+	color: #fff;
+	line-height: 30px;
+	display: inline-block;
+	-webkit-transform: scale(0.9);
+	        transform: scale(0.9);
+	text-align: center;
+}

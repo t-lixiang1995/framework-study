@@ -1,0 +1,80 @@
+.home_header{
+	background: url(../../imgs/S0102banner.png);
+	background-size: cover;
+	background-position: center center;
+}
+.server_overview{
+	background: url(../../imgs/S0103server.png);
+}
+.server_character_list .list_five{
+	margin-right: 0;
+}
+.server_character_list_t{
+	margin: 40px auto 0;
+}
+.server_character_list_t .list_zj{
+	margin-left: 28px;
+	margin-right: 228px;
+}
+.server_character_list_t .list_sm{
+	margin-right: 228px;
+}
+
+.price_main_list li{
+	margin-top: 30px;
+}
+.server_price_main .price_main_list .price_list_sel_rz{
+	margin-top: 54px;
+}
+.els{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.price_list_sel .price_list_line{
+	display: flex;
+}
+.price_list_sel .price_list_line p{
+	line-height: 24px;
+	font-size: 16px;
+	margin-right: 0;
+    padding-right: 10px;
+    text-indent: 0;
+}
+.price_list_sel .price_list_line img{
+	display: block;
+	width: 18px;
+	height: 9px;
+	margin-top: 20px;
+}
+.price_list_sel .price_list_line .price_list_img{
+	display: none;
+}
+.price_list_sel .price_list_top{
+	margin-top: 34px;
+}
+.el-select .el-input__inner{
+	width: 380px;
+	height: auto;
+    text-indent: 14px;
+    margin-top: 19px;
+    font-size: 16px;
+    box-shadow: 0 0 0, 0 -2px 10px -1px #cecece, 0 2px 10px -1px #cecece, 0 0 0;
+}
+.el-select .el-input .el-input__suffix .el-select__caret{
+	color: #a3a3a3;
+    font-size: 22px;
+    margin-top: 11px;
+    margin-right: 2px;  
+}
+.mar_p{
+	margin-bottom: 24px;
+}
+.el-select-dropdown .el-scrollbar .el-select-dropdown__wrap .el-scrollbar__view .el-select-dropdown__item{
+	white-space: pre-wrap !important;
+	overflow: auto;
+    width: 380px;
+    height: auto;
+}

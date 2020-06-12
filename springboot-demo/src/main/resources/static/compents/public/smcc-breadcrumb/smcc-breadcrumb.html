@@ -1,0 +1,13 @@
+<div class="row ml15 breadcrumbOuter">
+	<ol class="breadcrumb">
+		<li style="float: left;">
+			<a v-for="(a,index) in breadcrumb" :href="a.href"> {{a.name}} <span v-if="index !== (breadcrumb.length-1)">></span> </a>
+		</li>		
+		<slot>
+			<li class="float-right">
+				<el-button @click="FnReTurn" class="">返回</el-button>
+			</li>
+		</slot>
+		<li class="clear"></li>
+	</ol>	
+</div>

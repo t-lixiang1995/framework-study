@@ -1,0 +1,134 @@
+﻿<div class="tabSecurity">
+	<div class="batch">
+		<el-button type="primary"  @click="maskOne" :disabled="this.sels.length === 0">批量审批</el-button>
+		<el-dialog
+		  title="审批"
+		  :visible.sync="centerDialogVisible"
+		  >
+		  <div class="popup">
+		  	<div class="popupTop">
+		  		<el-row>
+				  <el-col :span="6"><div class="grid-content bg-purple" style="text-align:right">
+				  	请选择审批结果：
+				  </div></el-col>
+				  <el-col :span="6"><div class="grid-content bg-purple-light">
+				  	<el-button type="primary" id="adopt" style="width:100%" size="small" @click="adopt">通过</el-button>
+				  </div></el-col>
+				  <el-col :span="6"><div class="grid-content bg-purple">
+				  	<el-button id="noadopt" style="width:100%" size="small" @click="noadopt">不通过</el-button>
+				  </div></el-col>
+				   	<el-col :span="6">
+					   	<div class="grid-content bg-purple">
+							<el-button id="upadopt" style="width:100%" size="small" @click="upadopt">向上审批</el-button>
+						</div>
+					</el-col>
+				</el-row>
+		  	</div>
+		  	<div class="popupBottom">
+		  		<el-row>
+							<el-col :span="6">
+								<div class="grid-content bg-purple" style="text-align:right">审批意见：</div>
+							</el-col>
+							<el-col :span="18">
+								<div class="grid-content bg-purple-light">
+									<el-input
+				  				type="textarea"
+				  				:rows="4"
+				 				placeholder="请输入"
+				 				maxlength="100"
+				  				v-model="textarea">
+							</el-input>
+						</div>
+					</el-col>
+				</el-row>
+		  	</div>
+		</div>
+		  <span slot="footer" class="dialog-footer">
+		    <el-button class="el-button el-button--primary el-button--small el-button--default" type="primary" @click="determine">
+		    	确 定
+		    </el-button>
+		     <el-button class="el-button el-button--primary el-button--small el-button--default" @click="cancel">
+		     	取 消
+		     </el-button>
+		  </span>
+		</el-dialog>
+	</div>
+	<template>
+	  <el-table
+	    ref="multipleTable"
+	    border
+	    :data="tableData"
+	    stripe
+	    tooltip-effect="dark"
+	    style="width: 100%"
+	    @selection-change="handleSelectionChange">
+	    <el-table-column  
+	      type="selection"
+	      width="55">
+	    </el-table-column>
+	    <el-table-column
+	      prop="createName"
+	      :label= tableTitle.title2
+	      >
+	    </el-table-column>
+	    <el-table-column
+	      prop="taskType"
+	      :label= tableTitle.title3>
+	    </el-table-column>
+	    	<el-table-column
+	      prop="inspectionProcess"
+	      :label= tableTitle.title4>
+	    </el-table-column>
+	    <el-table-column
+	      prop="createTime"
+	      :label= tableTitle.title5>
+	    </el-table-column>
+	    <el-table-column
+	      prop="inspectBeginTime"
+	      :label= tableTitle.title6>
+	    </el-table-column>
+	    <el-table-column
+	      prop="checkBeginTime"
+	      :label= tableTitle.title7>
+	    </el-table-column>
+	    <el-table-column
+	      prop="spotCheckBeginTime"
+	      :label= tableTitle.title8>
+	    </el-table-column>
+	    <el-table-column
+	      prop="rectificationBeginTime"
+	      :label= tableTitle.title9>
+	    </el-table-column>
+	    <el-table-column
+	      prop="liablePerson"
+	      :label= tableTitle.title10>
+	    </el-table-column>
+	    <el-table-column
+	      prop='taskStatus'
+	      :label= tableTitle.title11
+	    >	
+	    </el-table-column>
+	    <el-table-column
+	      prop=""
+	      :label= tableTitle.title12>
+	      	 <template slot-scope="scope">
+		       	 <el-button type="text" size="small" @click.native.prevent="deleteRow(scope.row)">审批</el-button>
+		     </template>
+	    </el-table-column>
+	  </el-table>
+	</template>
+	<div class="paging">
+		<div class="pageLeft">
+			<span>显示{{(currentPage-1)*pagesize+1}}到{{pagesize*currentPage}}行，共{{tableData.length}}行记录</span>
+		</div>
+		<div class="pageRight">
+			<el-pagination
+			  background
+			  :page-size="15"
+			  layout="prev,pager,next,total,jumper"
+			  :total="tableData.length"
+			  @current-change="handleCurrentChange" :current-page="currentPage">
+			</el-pagination>
+		</div>
+	</div>
+</div>
