@@ -11,6 +11,7 @@
     <modules>
         <module>springboot-demo</module>
 		<module>cxf-webservice</module>
+		<module>springCloud-demo</module>
     </modules>
 
 </project>
