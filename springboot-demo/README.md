@@ -1,4 +1,0 @@
-# springboot-demo
-实现安全公告的功能<br>
-一个集成actuator丶mysql丶mybatis丶pagehelper丶swagger2丶druid等的springboot应用<br>
-自行修改com.pcitc.sebl.helloSpringBoot.constant包中的上传文件地址
